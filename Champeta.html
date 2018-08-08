@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/sintetizador.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Champeta</title>
+</head>
+<body> 
+        <h2>Champeta</h2>
+        <script language="javascript">
+          function doSearch() {
+              var tableReg = document.getElementById('regTable');
+              var searchText = document.getElementById('searchTerm').value.toLowerCase();
+              for (var i = 1; i < tableReg.rows.length; i++) {
+                  var cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+                  var found = false;
+                  for (var j = 0; j < cellsOfRow.length && !found; j++) {
+                      var compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+                      if (searchText.length == 0 || (compareWith.indexOf(searchText) > -1)) {
+                          found = true;
+                      }
+                  }
+                  if (found) {
+                      tableReg.rows[i].style.display = '';
+                  } else {
+                      tableReg.rows[i].style.display = 'none';
+                  }
+              }
+          }
+      </script>
+
+      <input id="searchTerm" type="text" onkeyup="doSearch()" />
+        <table id="regTable">
+                <tr>
+                  <th>Autor</th>
+                  <th>Nombre</th>
+                  <th>Video</th>
+                </tr>
+                <tr>
+                  <td>Mahlathini and The Mahotella Queens</td>
+                  <td>La muha</td>
+                  <td><iframe width="85" height="85" src="https://www.youtube.com/embed/bdwF1IbadUM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td>
+                </tr>
+                <tr>
+                  <td>Ni idea xd</td>
+                  <td>El propio malambito</td>
+                  <td><iframe width="85" height="85" src="https://www.youtube.com/embed/fdYowxVtBGE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td>
+                </tr>
+                <tr>
+                  <td>El Sayayin</td>
+                  <td>La voladora</td>
+                  <td><iframe width="85" height="85" src="https://www.youtube.com/embed/btcddA1U514" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td>
+                </tr>
+                <tr>
+                  <td>Dogar Disc</td>
+                  <td>El viejo zorro</td>
+                  <td><iframe width="85" height="85" src="https://www.youtube.com/embed/E_mSbKYX0PI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td>
+                </tr>
+                <tr>
+                  <td>El Afinaito </td>
+                  <td>Busco Alguien Que Me Quiera</td>
+                  <td><iframe width="85" height="85" src="https://www.youtube.com/embed/3e3NhzZddEA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td>
+                </tr>
+                
+              </table>
+
+              <footer>
+                    <div class="contenedor">
+                      <div class="nosotros">
+                        <h2> Dayana Romero</h2>
+                        <p>Email:dayana.romero@cecar.edu.co</p>
+                      </div> <!--div nosotros-->
+                      
+                    </div> <!--div contenido-->
+                    <p class="copyright"</p>
+                      Todos los derechos reservados &copy; .Parranda 2018
+                  </footer>
+    
+</body>
+</html>

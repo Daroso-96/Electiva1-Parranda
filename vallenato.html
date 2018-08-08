@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/acordeon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Vallenato</title>
+</head>
+<body> 
+        <h2>Vallenato</h2>
+        <script language="javascript">
+          function buscar() {
+              var tableReg = document.getElementById('tablaMusica');
+              var searchText = document.getElementById('searchTerm').value.toLowerCase();
+              for (var i = 1; i < tableReg.rows.length; i++) {
+                  var cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+                  var found = false;
+                  for (var j = 0; j < cellsOfRow.length && !found; j++) {
+                      var compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+                      if (searchText.length == 0 || (compareWith.indexOf(searchText) > -1)) {
+                          found = true;
+                      }
+                  }
+                  if (found) {
+                      tableReg.rows[i].style.display = '';
+                  } else {
+                      tableReg.rows[i].style.display = 'none';
+                  }
+              }
+          }
+      </script>
+      <input id="searchTerm" type="text" onkeyup="buscar()" />
+      <table id="tablaMusica">
+       
+                <tr>
+                  <th>Autor</th>
+                  <th>Nombre</th>
+                  <th>Video</th>
+                </tr>
+                <tr>
+                  <td>Rafael Escalona</td>
+                  <td>La casa en el aire.</td>
+                  <td><iframe width="85" height="85" src="https://www.youtube.com/embed/6-jm09r3fp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td>
+                </tr>
+                <tr>
+                  <td>Diomedez Diaz</td>
+                  <td>La plata</td>
+                  <td><iframe width="85" height="85" src="https://www.youtube.com/embed/iblcKXP6pLA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td>
+                </tr>
+                <tr>
+                  <td>Los diablitos</td>
+                  <td>No voy a llorar</td>
+                  <td><iframe width="85" height="85" src="https://www.youtube.com/embed/deG6EMdrlfg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td>
+                </tr>
+                <tr>
+                  <td>Los diablitos</td>
+                  <td>Los caminos de la vida</td>
+                  <td><iframe width="85" height="85" src="https://www.youtube.com/embed/0ZYvbveYoVk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td>
+                </tr>
+                <tr>
+                  <td>Diomedez Diaz</td>
+                  <td>El condor herido</td>
+                  <td><iframe width="85" height="85" src="https://www.youtube.com/embed/uLOpenNJ8v0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td>
+                </tr>
+                <tr>
+                  <td>Los Embajadores Del Vallenato </td>
+                  <td>El santo cachon</td>
+                  <td><iframe width="85" height="85" src="https://www.youtube.com/embed/GCxX1R0EhRo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td>
+                </tr>
+              </table>
+
+              <footer>
+                    <div class="contenedor">
+                      <div class="nosotros">
+                        <h2> Dayana Romero</h2>
+                        <p>Email:dayana.romero@cecar.edu.co</p>
+                      </div> <!--div nosotros-->
+                      
+                    </div> <!--div contenido-->
+                    <p class="copyright"</p>
+                      Todos los derechos reservados &copy; .Parranda 2018
+                  </footer>
+              
+    
+</body>
+</html>
